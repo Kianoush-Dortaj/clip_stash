@@ -39,6 +39,6 @@ impl FromStr for Password {
     type Err = ClipError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Self::new(s.to_string())
+        Ok(Self::new(s.to_string()))
     }
 }

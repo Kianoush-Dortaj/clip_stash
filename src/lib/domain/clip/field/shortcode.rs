@@ -1,7 +1,7 @@
 use super::ClipError;
 use serde::{Deserialize, Serialize};
-use serde::{Deserialize,Serialize};
 use std::str::FromStr;
+use rand::prelude::*;
 
 #[derive(Debug,Clone,Deserialize,Serialize)]
 pub struct ShortCode(String);
@@ -9,7 +9,6 @@ pub struct ShortCode(String);
 impl ShortCode {
     pub fn new()-> Self {
 
-        use rand::prelude::*;
         let allowed_chars =[
             'a','b','c','d','1','2','3','4'
         ];
@@ -59,6 +58,6 @@ impl FromStr for ShortCode {
     type Err = ClipError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Self::new(s.into ())
+       Ok(Self::new())
     }
 }

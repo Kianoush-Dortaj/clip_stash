@@ -2,7 +2,7 @@ use super::ClipError;
 use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Debug, Deserialize, Serialize)]
-pub struct Hit(u64);
+pub struct Hits(u64);
 
 impl Hits {
 
