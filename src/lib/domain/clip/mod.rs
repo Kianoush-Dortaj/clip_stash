@@ -3,6 +3,7 @@ pub mod field;
 use serde::{Serialize,Deserialize};
 use thiserror::Error;
 
+#[derive(Error, Debug)]
 pub enum ClipError {
     #[error("invalid password : {0}")]
     InvalidPassword(String),

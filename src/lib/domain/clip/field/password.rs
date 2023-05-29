@@ -1,4 +1,4 @@
-use super::ClipError;
+use crate::lib::domain::clip::ClipError;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;
 
@@ -39,6 +39,7 @@ impl FromStr for Password {
     type Err = ClipError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self::new(s.to_string()))
+        Self::new(s.to_string())
     }
 }
+

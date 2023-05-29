@@ -1,4 +1,4 @@
-use super::ClipError;
+use crate::lib::domain::clip::ClipError;
 use serde::{Deserialize, Serialize};
 use std::str::FromStr;
 use rand::prelude::*;
@@ -20,7 +20,7 @@ impl ShortCode {
             shortcode.push(
                 *allowed_chars
                 .choose(&mut rng)
-                .except("sampling array should have values")
+                .expect("sampling array should have values")
             )
         }
 
